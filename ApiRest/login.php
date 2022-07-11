@@ -1,52 +1,22 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD']=='POST') {
-
-    $correo = $_POST['correo'];
-    $password = $_POST['password'];
-
-    require_once 'conexion.php';
-
-    $sql = "SELECT * FROM usuarios WHERE correo='$correo' ";
-
-    $response = mysqli_query($mysql, $sql);
-
-    $result = array();
-    $result['login'] = array();
-
-    if ( mysqli_num_rows($response) === 1 ) {
-
-        $row = mysqli_fetch_assoc($response);
-
-        if ( password_verify($password, $row['password']) ) {
-
-            $index['nombre'] = $row['nombre'];
-            $index['apellidos'] = $row['apellidos'];
-            $index['telefono'] = $row['telefono'];
-            $index['direccion'] = $row['direccion'];
-            $index['correo'] = $row['correo'];
-            $index['id_usuario'] = $row['id_usuario'];
-
-            array_push($result['login'], $index);
-
-            $result['success'] = "1";
-            $result['message'] = "success";
-            echo json_encode($result);
-
-            mysqli_close($mysql);
-
-        } else {
-
-            $result['success'] = "0";
-            $result['message'] = "error";
-            echo json_encode($result);
-
-            mysqli_close($mysql);
-
-        }
-
+// Comprobar si el correo electrónico y la contraseña están configurados
+if(isset($_POST['correo']) && isset($_POST['password'])){
+    // Incluir los archivos necesarios
+    require_once "conexion.phpp";
+    require_once "validacion.php";
+    // Llame a validar, pase los datos del formulario como parámetro y almacene el valor devuelto
+    $correo = validate($_POST['correo']);
+    $password = validate($_POST['password']);
+    // Crear la cadena de consulta SQL
+    $sql = "select * from usuarios where correo='$correo' and password='" . md5($password) . "'";
+    // Ejecutar la consulta
+    $result = $mysql->query($sql);
+    // Si el número de filas devueltas es mayor que 0 (es decir, si se encuentra el registro), imprimiremos "éxito", de lo contrario, "fracaso"
+    if($result->num_rows > 0){
+        echo "exito";
+    } else{
+        // Si no se encuentra ningún registro, imprima "falla"
+        echo "fracaso";
     }
-
 }
-
 ?>
