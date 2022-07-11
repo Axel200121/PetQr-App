@@ -26,5 +26,5 @@ class AgregaUsuario : AppCompatActivity() {
         txt_password = findViewById(R.id.txt_password)
     }
 
-    
+
 }
