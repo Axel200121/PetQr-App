@@ -4,27 +4,58 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 class AgregaUsuario : AppCompatActivity() {
-    var txt_nombre:EditText?=null;
-    var txt_apellidos:EditText?=null;
-    var txt_telefono:EditText?=null;
-    var txt_direccion:EditText?=null;
-    var txt_correo:EditText?=null;
-    var txt_password:EditText?=null;
+    var txtNombre:EditText?=null;
+    var txtApellidos:EditText?=null;
+    var txtTelefono:EditText?=null;
+    var txtDireccion:EditText?=null;
+    var txtCorreo:EditText?=null;
+    var txtPassword:EditText?=null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_usuario)
 
-        txt_nombre = findViewById(R.id.txt_nombre)
-        txt_apellidos = findViewById(R.id.txt_apellidos)
-        txt_telefono = findViewById(R.id.txt_telefono)
-        txt_direccion = findViewById(R.id.txt_telefono)
-        txt_correo = findViewById(R.id.txt_correo)
-        txt_password = findViewById(R.id.txt_password)
+        txtNombre = findViewById(R.id.txtNombre)
+        txtApellidos = findViewById(R.id.txtApellidos)
+        txtTelefono = findViewById(R.id.txtTelefono)
+        txtDireccion = findViewById(R.id.txtDireccion)
+        txtCorreo = findViewById(R.id.txtCorreo)
+        txtPassword = findViewById(R.id.txtPassword)
+
+
+
     }
+    fun clickBtnInsertar(view:View){
+        val url="http://192.168.100.71/api_rest_petqr/ApiRest/insertar.php"
+        val queue=Volley.newRequestQueue(this)
+        var resultadoPost = object : StringRequest(Request.Method.POST,url,
+            Response.Listener<String> { response ->
+                Toast.makeText(this,"Usuario insertado exitosamente",Toast.LENGTH_LONG).show()
+            },Response.ErrorListener { error ->
+                Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
+            }){
+            override fun getParams(): MutableMap<String, String> {
+                val parametros=HashMap<String,String>()
+                parametros.put("nombre",txtNombre?.text.toString())
+                parametros.put("apellidos",txtApellidos?.text.toString())
+                parametros.put("telefono",txtTelefono?.text.toString())
+                parametros.put("direccion",txtDireccion?.text.toString())
+                parametros.put("correo",txtCorreo?.text.toString())
+                parametros.put("password",txtPassword?.text.toString())
+                return parametros
+            }
+        }
+        queue.add(resultadoPost)
+    }
+
 
 
 }

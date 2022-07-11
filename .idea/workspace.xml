@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10e82390-a7cd-4f37-8240-c377ea44d11a" name="Changes" comment="Creación de la conexión de la base de datos">
-      <change afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/Agregar_Usuario.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_agregar_usuario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/api_rest_petqr.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conexion.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insertar.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/Home.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/AgregaUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/AgregaUsuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_agregar_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_agregar_usuario.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,21 +36,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/API_REST_PETQR&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/API_REST_PETQR",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,7 +65,7 @@
       <workItem from="1657493635342" duration="1309000" />
       <workItem from="1657495095675" duration="265000" />
       <workItem from="1657495526788" duration="274000" />
-      <workItem from="1657495908398" duration="1157000" />
+      <workItem from="1657495908398" duration="3447000" />
     </task>
     <servers />
   </component>
