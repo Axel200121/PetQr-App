@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10e82390-a7cd-4f37-8240-c377ea44d11a" name="Changes" comment="Creación de la conexión de la base de datos">
-      <change afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/Home.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiRest/registro.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/AgregaUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/AgregaUsuario.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/java/com/example/app_movil_petqr/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_agregar_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_agregar_usuario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Movil/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiRest/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/ApiRest/conexion.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,7 @@
       <workItem from="1657493635342" duration="1309000" />
       <workItem from="1657495095675" duration="265000" />
       <workItem from="1657495526788" duration="274000" />
-      <workItem from="1657495908398" duration="3447000" />
+      <workItem from="1657495908398" duration="5260000" />
     </task>
     <servers />
   </component>
@@ -82,6 +75,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/ApiRest/registro.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
