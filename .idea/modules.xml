@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pet_qr.iml" filepath="$PROJECT_DIR$/.idea/modules/pet_qr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pet_qr.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pet_qr.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pet_qr.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pet_qr.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pet_qr.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pet_qr.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pet_qr.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pet_qr.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/api_rest_petqr.iml" filepath="$PROJECT_DIR$/.idea/api_rest_petqr.iml" />
     </modules>
   </component>
 </project>
