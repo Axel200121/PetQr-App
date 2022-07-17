@@ -16,7 +16,7 @@ create table mascota(
                         idMascota int(4) PRIMARY KEY  AUTO_INCREMENT NOT NULL ,
                         nombre varchar(50),
                         tipoMascota varchar(50),
-                        descripción varchar(150),
+                        descripcion varchar(150),
                         idUsuario int(4),
                         FOREIGN KEY (idUsuario) REFERENCES  usuario(idUsuario)
 
