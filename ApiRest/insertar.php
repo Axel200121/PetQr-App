@@ -2,15 +2,16 @@
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     require_once 'conexion.php';
     $nombre=$_POST["nombre"];
-    $apellidos=$_POST["apellidos"];
+    $apellidoPaterno=$_POST["apellidoPaterno"];
+    $apellidoMaterno=$_POST["apellidoMaterno"];
     $telefono=$_POST["telefono"];
     $direccion=$_POST["direccion"];
     $correo=$_POST["correo"];
-    $password=$_POST["password"];
+    $psw=$_POST["psw"];
 
-    $query="INSERT INTO usuarios (nombre,apellidos,telefono,direccion,correo,password) 
-
-    VALUES('".$nombre."','".$apellidos."','".$telefono."','".$direccion."','".$correo."','".$password."')";
+    $query="INSERT INTO usuario 
+            (nombre, apellidoPaterno, apellidoMaterno, telefono, direccion, correo, psw)
+            VALUES('".$nombre."','".$apellidoPaterno."','".$apellidoMaterno."','".$telefono."','".$direccion."','".$correo."','".$psw."');";
     $resultado=$mysql->query($query);
 
     if($resultado==true){
