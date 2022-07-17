@@ -13,7 +13,8 @@ import com.android.volley.toolbox.Volley
 
 class AgregaUsuario : AppCompatActivity() {
     var txtNombre:EditText?=null;
-    var txtApellidos:EditText?=null;
+    var txtApellidoPaterno:EditText?=null;
+    var txtApellidoMaterno:EditText?=null;
     var txtTelefono:EditText?=null;
     var txtDireccion:EditText?=null;
     var txtCorreo:EditText?=null;
@@ -24,7 +25,8 @@ class AgregaUsuario : AppCompatActivity() {
         setContentView(R.layout.activity_agregar_usuario)
 
         txtNombre = findViewById(R.id.txtNombre)
-        txtApellidos = findViewById(R.id.txtApellidos)
+        txtApellidoPaterno= findViewById(R.id.txtApellidoPaterno);
+        txtApellidoMaterno = findViewById(R.id.txtApellidoMaterno);
         txtTelefono = findViewById(R.id.txtTelefono)
         txtDireccion = findViewById(R.id.txtDireccion)
         txtCorreo = findViewById(R.id.txtCorreo)
@@ -34,7 +36,7 @@ class AgregaUsuario : AppCompatActivity() {
 
     }
     fun clickBtnInsertar(view:View){
-        val url="http://192.168.100.71/api_rest_petqr/ApiRest/insertar.php"
+        val url="http://192.168.100.71/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
         val queue=Volley.newRequestQueue(this)
         var resultadoPost = object : StringRequest(Request.Method.POST,url,
             Response.Listener<String> { response ->
@@ -45,7 +47,8 @@ class AgregaUsuario : AppCompatActivity() {
             override fun getParams(): MutableMap<String, String> {
                 val parametros=HashMap<String,String>()
                 parametros.put("nombre",txtNombre?.text.toString())
-                parametros.put("apellidos",txtApellidos?.text.toString())
+                parametros.put("apellidoPaterno",txtApellidoPaterno?.text.toString())
+                parametros.put("apellidoMaterno",txtApellidoMaterno?.text.toString())
                 parametros.put("telefono",txtTelefono?.text.toString())
                 parametros.put("direccion",txtDireccion?.text.toString())
                 parametros.put("correo",txtCorreo?.text.toString())

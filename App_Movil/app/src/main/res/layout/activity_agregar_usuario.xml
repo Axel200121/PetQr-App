@@ -52,11 +52,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"
-            android:hint="Ingrese apellidos"
+            android:hint="Ingrese el apellido Paterno"
             app:startIconDrawable="@drawable/ic_apellidos">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtApellidos"
+                android:id="@+id/txtApellidoPaterno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:fontFamily="sans-serif"
+                android:inputType="textPersonName"
+                android:shadowColor="#044343"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:hint="Ingrese el apellido Materno"
+            app:startIconDrawable="@drawable/ic_apellidos">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtApellidoMaterno"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -100,7 +118,7 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:fontFamily="sans-serif"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:shadowColor="#044343"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
