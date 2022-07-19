@@ -31,12 +31,9 @@ class AgregaUsuario : AppCompatActivity() {
         txtDireccion = findViewById(R.id.txtDireccion)
         txtCorreo = findViewById(R.id.txtCorreo)
         txtPassword = findViewById(R.id.txtPassword)
-
-
-
     }
-    fun clickBtnInsertar(view:View){
-        val url="http://192.168.100.71/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
+    fun clickBtnInsertarUsuario(view : View){
+        val url= "http://192.168.100.71/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
         val queue=Volley.newRequestQueue(this)
         var resultadoPost = object : StringRequest(Request.Method.POST,url,
             Response.Listener<String> { response ->
@@ -52,13 +49,10 @@ class AgregaUsuario : AppCompatActivity() {
                 parametros.put("telefono",txtTelefono?.text.toString())
                 parametros.put("direccion",txtDireccion?.text.toString())
                 parametros.put("correo",txtCorreo?.text.toString())
-                parametros.put("password",txtPassword?.text.toString())
+                parametros.put("psw",txtPassword?.text.toString())
                 return parametros
             }
         }
         queue.add(resultadoPost)
     }
-
-
-
 }

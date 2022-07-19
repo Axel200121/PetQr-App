@@ -61,13 +61,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnInsertar"
+            android:id="@+id/btnIngresarLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#456677"
-            android:shadowRadius="@integer/material_motion_duration_long_2"
             android:layout_margin="@dimen/cardview_default_elevation"
-            android:onClick="clickBtnInsertar"
+            android:backgroundTint="#456677"
+            android:onClick="validarUsuario"
+            android:shadowRadius="@integer/material_motion_duration_long_2"
             android:text="Iniciar Sesión" />
         <Button
             android:id="@+id/btnRegistrarFormulario"
