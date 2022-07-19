@@ -12,7 +12,7 @@ class PanelMascota : AppCompatActivity() {
 
         val btnAgregarMascota = findViewById<Button>(R.id.btn_agrega_Mascota)
         btnAgregarMascota.setOnClickListener {
-            val agregaMascota = Intent(this,DatosPersonalesUsuario::class.java)
+            val agregaMascota = Intent(this,AgregarMascota::class.java)
             startActivity(agregaMascota)
         }
     }
