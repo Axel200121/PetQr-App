@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"]==["GET"]){
     require_once "../conexion.php";
-    $idUsuario = $_GET["idUsuario"];
+    $idUsuario = $_GET['idUsuario'];
     //hacemos la consulta para traer el registro
     $query = "SELECT * FROM usuario WHERE idUsuario='".$idUsuario."'";
     $resultado = $mysql->query($query);
@@ -15,6 +15,4 @@ if ($_SERVER["REQUEST_METHOD"]==["GET"]){
     }else{
         echo "Usuario no encontrado";
     }
-    $resultado->close();
-    $mysql->close();
 }

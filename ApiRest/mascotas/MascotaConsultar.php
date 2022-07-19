@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"]=="GET"){
+if ($_SERVER["REQUEST_METHOD"]=="POST"){
     require_once "../conexion.php";
     $idUsuario = $_GET['idUsuario'];
     $query = "SELECT mascota.nombre,tipoMascota,descripcion 
