@@ -38,7 +38,7 @@
             app:startIconDrawable="@drawable/ic_descripcion">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtNombre"
+                android:id="@+id/txtNombreMascota"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -57,7 +57,7 @@
             app:startIconDrawable="@drawable/ic_descripcion">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtnombreMascota"
+                android:id="@+id/txtTipoMascota"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -75,12 +75,12 @@
             app:startIconDrawable="@drawable/ic_descripcion">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtTipoMascota"
+                android:id="@+id/txtDescripcionMascota"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:padding="10dp"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
+                android:padding="10dp"
                 android:shadowColor="#044343"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,7 +91,7 @@
             android:layout_margin="@dimen/cardview_default_elevation"
             android:backgroundTint="#456677"
             android:shadowRadius="@integer/material_motion_duration_long_2"
-            android:onClick="clickBtnInsertarUsuario"
+            android:onClick="clickBtnInsertarMascota"
             android:text="Resgitrar" />
     </LinearLayout>
 </ScrollView>
