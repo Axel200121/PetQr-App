@@ -1,9 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"]==["GET"]){
+if ($_SERVER["REQUEST_METHOD"]=="GET"){
     require_once "../conexion.php";
-    $idUsuario = $_GET['idUsuario'];
+    $psw = $_GET['psw'];
     //hacemos la consulta para traer el registro
-    $query = "SELECT * FROM usuario WHERE idUsuario='".$idUsuario."'";
+    $query = "SELECT * FROM usuario WHERE psw='".$psw."'";
     $resultado = $mysql->query($query);
     if ($mysql->affected_rows > 0){
         //va jalando cada uno de los registro

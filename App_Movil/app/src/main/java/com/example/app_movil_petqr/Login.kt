@@ -8,9 +8,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.AuthFailureError
+import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONArray
+import org.json.JSONException
+import kotlin.math.log
 
 class Login : AppCompatActivity() {
     var txtCorreoLogin: EditText?=null;
@@ -33,7 +38,7 @@ class Login : AppCompatActivity() {
         }
 
         btnIngresarLogin!!.setOnClickListener {
-            validarUsuario("http://192.168.100.71/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
+            validarUsuario("http://192.168.0.11/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
         }
     }
     private fun validarUsuario(URL: String) {

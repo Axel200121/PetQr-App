@@ -23,7 +23,7 @@ class AgregarMascota : AppCompatActivity(){
 
     }
     fun clickBtnInsertarMascota(view: View){
-        val url= "http://192.168.100.71/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
+        val url= "http://192.168.0.11/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
         val queue=Volley.newRequestQueue(this)
         var resultadoPostMascota = object : StringRequest(Method.POST,url,
             Response.Listener { response ->
