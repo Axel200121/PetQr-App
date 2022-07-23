@@ -31,7 +31,7 @@ class DatosPersonalesUsuario : AppCompatActivity() {
 
         val psw= intent.getStringExtra("psw").toString()
         val queue =Volley.newRequestQueue(this)
-        val url ="http://192.168.0.11/PetQr-App/ApiRest/usuarios/UsuarioConsultar.php?psw=$psw"
+        val url ="http://192.168.0.8/PetQr-App/ApiRest/usuarios/UsuarioConsultar.php?psw=$psw"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
