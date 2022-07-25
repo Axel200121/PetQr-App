@@ -82,4 +82,15 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         }
         queue.add(resultadoPost)
     }
+    fun activarCajas(view: View){
+        txtNombreEditar?.isEnabled=true
+        txtApellidoPaternoEditar?.isEnabled=true
+        txtApellidoMaternoEditar?.isEnabled=true
+        txtTelefonoEditar?.isEnabled=true
+        txtDireccionEditar?.isEnabled=true
+        txtCorreoEditar?.isEnabled=true
+        txtPasswordEditar?.isEnabled=true
+
+
+    }
 }
