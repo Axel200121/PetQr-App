@@ -33,7 +33,7 @@ class AgregarMascota : AppCompatActivity(){
 
     }
     fun clickBtnInsertarMascota(view: View){
-        val url= "http://192.168.0.8/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
+        val url= "http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
         val queue=Volley.newRequestQueue(this)
         var resultadoPostMascota = object : StringRequest(Method.POST,url,
             Response.Listener { response ->
@@ -46,7 +46,7 @@ class AgregarMascota : AppCompatActivity(){
                 parametros.put("nombre",txtNombreMascota?.text.toString())
                 parametros.put("tipoMascota",txtTipoMascota?.text.toString())
                 parametros.put("descripcion",txtDescripcionMascota?.text.toString())
-                parametros.put("idUsuario","1")
+                parametros.put("idUsuario",tvIdUsuarioMascota?.text.toString())
                 return parametros
             }
         }
