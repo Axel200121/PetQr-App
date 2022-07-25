@@ -37,7 +37,7 @@
             app:startIconDrawable="@drawable/ic_user_login">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtNombre"
+                android:id="@+id/txtNombreEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -56,7 +56,7 @@
             app:startIconDrawable="@drawable/ic_apellidos">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtApellidoPaterno"
+                android:id="@+id/txtApellidoPaternoEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -74,7 +74,7 @@
             app:startIconDrawable="@drawable/ic_apellidos">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtApellidoMaterno"
+                android:id="@+id/txtApellidoMaternoEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -94,7 +94,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtTelefono"
+                android:id="@+id/txtTelefonoEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -113,7 +113,7 @@
             app:startIconDrawable="@drawable/ic_direccion">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtDireccion"
+                android:id="@+id/txtDireccionEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -133,7 +133,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtCorreo"
+                android:id="@+id/txtCorreoEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -152,7 +152,7 @@
             app:startIconDrawable="@drawable/ic_user_password">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtPassword"
+                android:id="@+id/txtPasswordEditar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
@@ -163,7 +163,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnInsertar"
+            android:id="@+id/btnEditar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/cardview_default_elevation"
