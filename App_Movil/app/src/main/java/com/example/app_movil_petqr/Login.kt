@@ -38,7 +38,7 @@ class Login : AppCompatActivity() {
         }
 
         btnIngresarLogin!!.setOnClickListener {
-            validarUsuario("http://192.168.0.8/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
+            validarUsuario("http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
         }
     }
     private fun validarUsuario(URL: String) {
@@ -48,6 +48,7 @@ class Login : AppCompatActivity() {
             Response.Listener { response ->
                 if(!response.isEmpty()){
                     val intent = Intent(applicationContext, Home::class.java)
+                    intent.putExtra("psw", txtPasswordLogin?.text.toString())
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@Login, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
@@ -67,4 +68,10 @@ class Login : AppCompatActivity() {
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(stringRequest)
     }
+
+    /*fun clickVer(view: View){
+        var intent = Intent(this,Home::class.java)
+        intent.putExtra("psw", txtPasswordLogin?.text)
+        startActivity(intent)
+    }*/
 }
