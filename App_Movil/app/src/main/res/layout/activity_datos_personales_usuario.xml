@@ -19,14 +19,16 @@
             android:textColor="#456677"
             android:textAlignment="center"
             android:textSize="30dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="302dp"
             android:padding="70dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/logosplash"></ImageView>
+            app:srcCompat="@drawable/logosplash">
+        </ImageView>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -44,6 +46,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
                 android:shadowColor="#044343"
+                android:enabled="false"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,6 +66,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
                 android:shadowColor="#044343"
+                android:enabled="false"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -81,6 +85,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
                 android:shadowColor="#044343"
+                android:enabled="false"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,6 +106,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="number"
                 android:shadowColor="#044343"
+                android:enabled="false"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,6 +126,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
                 android:shadowColor="#044343"
+                android:enabled="false"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -140,6 +147,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textWebEmailAddress"
                 android:shadowColor="#044343"
+                android:enabled="false"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -158,6 +166,7 @@
                 android:padding="10dp"
                 android:fontFamily="sans-serif"
                 android:inputType="textPassword"
+                android:enabled="false"
                 android:shadowColor="#044343"
                 tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -170,6 +179,16 @@
             android:layout_marginTop="-20dp"/>
 
         <Button
+            android:id="@+id/btnActivarCajas"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/cardview_default_elevation"
+            android:backgroundTint="#456677"
+            android:onClick="activarCajas"
+            android:shadowRadius="@integer/material_motion_duration_long_2"
+            android:text="Habilitar campos" />
+
+        <Button
             android:id="@+id/btnEditar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -177,7 +196,9 @@
             android:backgroundTint="#456677"
             android:onClick="editarUsuario"
             android:shadowRadius="@integer/material_motion_duration_long_2"
-            android:text="Editar mi información" />
+            android:text="Actualizar" />
+
+
     </LinearLayout>
 </ScrollView>
 
