@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 
@@ -13,6 +16,8 @@ class AgregarMascota : AppCompatActivity(){
     var txtNombreMascota:EditText?=null
     var txtTipoMascota:EditText?=null
     var txtDescripcionMascota:EditText?=null
+    var tvIdUsuarioMascota:TextView?=null
+    var idUsuario:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_mascota)
@@ -20,6 +25,11 @@ class AgregarMascota : AppCompatActivity(){
         txtNombreMascota = findViewById(R.id.txtNombreMascota)
         txtTipoMascota = findViewById(R.id.txtTipoMascota)
         txtDescripcionMascota= findViewById(R.id.txtDescripcionMascota)
+        tvIdUsuarioMascota=findViewById(R.id.tvIdUsuarioMascota)
+
+        idUsuario=intent.getStringExtra("idUsuario").toString()
+        tvIdUsuarioMascota?.setText(idUsuario)
+
 
     }
     fun clickBtnInsertarMascota(view: View){
