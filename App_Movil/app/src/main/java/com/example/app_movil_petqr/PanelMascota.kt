@@ -18,12 +18,6 @@ class PanelMascota : AppCompatActivity() {
         setContentView(R.layout.activity_panel_mascota)
         txtidUsuarioPaMascota=findViewById(R.id.txtidUsuarioPaMascota)
 
-        val btnAgregarMascota = findViewById<Button>(R.id.btn_agrega_Mascota)
-        btnAgregarMascota.setOnClickListener {
-            val agregaMascota = Intent(this,AgregarMascota::class.java)
-            startActivity(agregaMascota)
-        }
-
         val idUsuario=intent.getStringExtra("idUsuario").toString()
         val queue= Volley.newRequestQueue(this)
         val url="http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
@@ -36,5 +30,12 @@ class PanelMascota : AppCompatActivity() {
             }
         )
         queue.add(jsonObjectRequest)
+
+        val btnAgregarMascota = findViewById<Button>(R.id.btn_agrega_Mascota)
+        btnAgregarMascota.setOnClickListener {
+            val agregaMascota = Intent(this,AgregarMascota::class.java)
+            agregaMascota.putExtra("idUsuario",txtidUsuarioPaMascota?.text.toString())
+            startActivity(agregaMascota)
+        }
     }
 }
