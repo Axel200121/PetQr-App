@@ -43,6 +43,7 @@ class Home : AppCompatActivity() {
         val btnPersonal = findViewById<Button>(R.id.btn_panel_datosPersonales)
         btnPersonal.setOnClickListener {
             val lanzar = Intent(this,DatosPersonalesUsuario::class.java)
+            lanzar.putExtra("idUsuario",txtNombre1?.text.toString())
             startActivity(lanzar)
         }
 
