@@ -11,37 +11,40 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 
 class DatosPersonalesUsuario : AppCompatActivity() {
-    var txtNombre: EditText?=null;
-    var txtApellidoPaterno: EditText?=null;
-    var txtApellidoMaterno: EditText?=null;
-    var txtTelefono: EditText?=null;
-    var txtDireccion: EditText?=null;
-    var txtCorreo: EditText?=null;
-    var txtPassword: EditText?=null;
+    var txtNombreEditar: EditText?=null;
+    var txtApellidoPaternoEditar: EditText?=null;
+    var txtApellidoMaternoEditar: EditText?=null;
+    var txtTelefonoEditar: EditText?=null;
+    var txtDireccionEditar: EditText?=null;
+    var txtCorreoEditar: EditText?=null;
+    var txtPasswordEditar: EditText?=null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_datos_personales_usuario)
-        txtNombre = findViewById(R.id.txtNombre)
-        txtApellidoPaterno= findViewById(R.id.txtApellidoPaterno);
-        txtApellidoMaterno = findViewById(R.id.txtApellidoMaterno);
-        txtTelefono = findViewById(R.id.txtTelefono)
-        txtDireccion = findViewById(R.id.txtDireccion)
-        txtCorreo = findViewById(R.id.txtCorreo)
-        txtPassword = findViewById(R.id.txtPassword)
+        txtNombreEditar = findViewById<EditText?>(R.id.txtNombreEditar)
+        txtApellidoPaternoEditar= findViewById(R.id.txtApellidoPaternoEditar);
+        txtApellidoMaternoEditar = findViewById(R.id.txtApellidoMaternoEditar);
+        txtTelefonoEditar = findViewById(R.id.txtTelefonoEditar)
+        txtDireccionEditar = findViewById(R.id.txtDireccionEditar)
+        txtCorreoEditar = findViewById(R.id.txtCorreoEditar)
+        txtPasswordEditar = findViewById(R.id.txtPasswordEditar)
+        
 
-        val psw= intent.getStringExtra("psw").toString()
-        val queue =Volley.newRequestQueue(this)
-        val url ="http://192.168.0.8/PetQr-App/ApiRest/usuarios/UsuarioConsultar.php?psw=$psw"
+
+        val idUsuario=intent.getStringExtra("idUsuario").toString()
+        val queue=Volley.newRequestQueue(this)
+        val url="http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
-                txtNombre?.setText(response.getString("nombre"))
-                txtApellidoPaterno?.setText(response.getString("apellidoPaterno"))
-                txtApellidoMaterno?.setText(response.getString("apellidoMaterno"))
-                txtTelefono?.setText(response.getString("telefono"))
-                txtDireccion?.setText(response.getString("direccion"))
-                txtCorreo?.setText(response.getString("correo"))
-                txtPassword?.setText(response.getString("psw"))
+                txtNombreEditar?.setText(response.getString("nombre"))
+                txtApellidoPaternoEditar?.setText(response.getString("apellidoPaterno"))
+                txtApellidoMaternoEditar?.setText(response.getString("apellidoMaterno"))
+                txtTelefonoEditar?.setText(response.getString("telefono"))
+                txtDireccionEditar?.setText(response.getString("direccion"))
+                txtCorreoEditar?.setText(response.getString("correo"))
+                txtPasswordEditar?.setText(response.getString("psw"))
+
             },Response.ErrorListener { error ->
                 Toast.makeText(this,error.toString(),Toast.LENGTH_LONG).show()
             }
