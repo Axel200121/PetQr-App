@@ -162,15 +162,22 @@
                 tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <TextView
+            android:id="@+id/tvIdUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"/>
+
         <Button
             android:id="@+id/btnEditar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/cardview_default_elevation"
             android:backgroundTint="#456677"
+            android:onClick="editarUsuario"
             android:shadowRadius="@integer/material_motion_duration_long_2"
-            android:onClick="clickBtnInsertarUsuario"
-            android:text="Resgitrar" />
+            android:text="Editar mi información" />
     </LinearLayout>
 </ScrollView>
 

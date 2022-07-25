@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -20,6 +21,7 @@ class DatosPersonalesUsuario : AppCompatActivity() {
     var txtDireccionEditar: EditText?=null;
     var txtCorreoEditar: EditText?=null;
     var txtPasswordEditar: EditText?=null;
+    var tvIdUsuario:TextView?=null
     var idUsuario:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +33,11 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         txtDireccionEditar = findViewById(R.id.txtDireccionEditar)
         txtCorreoEditar = findViewById(R.id.txtCorreoEditar)
         txtPasswordEditar = findViewById(R.id.txtPasswordEditar)
-
+        tvIdUsuario=findViewById(R.id.tvIdUsuario)
 
 
         idUsuario=intent.getStringExtra("idUsuario").toString()
+        tvIdUsuario?.setText(idUsuario)
         val queue=Volley.newRequestQueue(this)
         val url="http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
         val jsonObjectRequest = JsonObjectRequest(
@@ -54,7 +57,7 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun editarUsuario(view: View){
-        val url="http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioEditar"
+        val url="http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioEditar.php"
         val queue=Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST,url,
         Response.Listener { response ->
@@ -65,7 +68,6 @@ class DatosPersonalesUsuario : AppCompatActivity() {
             }
         ){
             override fun getParams(): MutableMap<String, String>? {
-                return super.getParams()
                 val parametros = HashMap<String,String>()
                 parametros.put("idUsuario",idUsuario!!)
                 parametros.put("nombre",txtNombreEditar?.text.toString())
