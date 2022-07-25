@@ -84,6 +84,11 @@
                 android:shadowColor="#044343"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/tvIdUsuarioMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"/>
         <Button
             android:id="@+id/btnInsertarMascota"
             android:layout_width="match_parent"
