@@ -50,6 +50,7 @@ class Home : AppCompatActivity() {
         val btnMascotas = findViewById<Button>(R.id.btn_panel_mascotas)
         btnMascotas.setOnClickListener {
             val btnMascota = Intent(this,PanelMascota::class.java)
+            btnMascota.putExtra("idUsuario",txtNombre1?.text.toString())
             startActivity(btnMascota)
         }
         val btnQr = findViewById<Button>(R.id.btn_panel_generaQr)
