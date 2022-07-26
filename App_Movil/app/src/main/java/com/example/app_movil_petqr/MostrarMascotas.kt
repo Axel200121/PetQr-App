@@ -12,6 +12,7 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
 
@@ -22,8 +23,11 @@ class MostrarMascotas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_mascotas)
         tableMascotas=findViewById(R.id.tableMascotas)
-        tableMascotas?.removeAllViews()
         idUsuario=intent.getStringExtra("idUsuario").toString()
+        tablaMascotas()
+    }
+    fun tablaMascotas(){
+        tableMascotas?.removeAllViews()
         var queue=Volley.newRequestQueue(this)
         var url ="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaConsultarPrueba.php?idUsuario=$idUsuario"
         var jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
@@ -52,11 +56,34 @@ class MostrarMascotas : AppCompatActivity() {
             }
         )
         queue.add(jsonObjectRequest)
+
     }
+
+
     fun tableEditar(view: View){
-        Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
     }
     fun tableBorrar(view: View){
-        Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
+        var url ="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
+        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
+
+        val queue=Volley.newRequestQueue(this)
+        var resultadoEliminar =object:StringRequest(Request.Method.POST,url,
+        Response.Listener { response ->
+            Toast.makeText(this,"Mascota Eliminada",Toast.LENGTH_LONG).show()
+            tablaMascotas()
+        },Response.ErrorListener {
+                Toast.makeText(this,"Error al eliminar tu mascota",Toast.LENGTH_LONG).show()
+
+            }
+        ){
+            override fun getParams(): MutableMap<String, String>? {
+                val parametros =HashMap<String, String>()
+                parametros.put("idMascota",view.id.toString())
+                return parametros
+            }
+        }
+        queue.add(resultadoEliminar)
+
+        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
     }
 }
