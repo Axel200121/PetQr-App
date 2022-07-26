@@ -3,9 +3,9 @@ if ($_SERVER["REQUEST_METHOD"]=="GET"){
 
     require_once "../conexion.php";
 
-    $idUsuario = $_GET['idUsuario'];
+    $idMascota = $_GET['idMascota'];
 
-    $query = "SELECT * FROM mascota WHERE mascota.idUsuario ='".$idUsuario."'";
+    $query = "SELECT * FROM mascota WHERE idMascota='".$idMascota."'";
     $resultado = $mysql->query($query);
     if ($mysql->affected_rows > 0){
         //va jalando cada uno de los registro
