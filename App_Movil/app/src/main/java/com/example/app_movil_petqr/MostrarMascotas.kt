@@ -70,6 +70,7 @@ class MostrarMascotas : AppCompatActivity() {
         idGlobal=view.id.toString()
         val intent = Intent(applicationContext, EditarMascota::class.java)
         intent.putExtra("idMascota",idGlobal)
+        intent.putExtra("idUsuario",idUsuario)
         startActivity(intent)
 
     }
