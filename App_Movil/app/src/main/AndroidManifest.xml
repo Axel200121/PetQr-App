@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MostrarMascotas"
+            android:exported="false" />
+        <activity
             android:name=".AgregarMascota"
             android:exported="false" />
         <activity
