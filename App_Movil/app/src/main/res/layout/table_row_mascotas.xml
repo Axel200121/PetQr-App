@@ -5,9 +5,9 @@
     android:layout_height="match_parent">
 
     <TableLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
+        android:layout_width="408dp"
+        android:layout_height="98dp"
+        tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="1dp">
 
         <TableRow
