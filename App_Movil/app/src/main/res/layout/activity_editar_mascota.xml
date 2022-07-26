@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarMascota">
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="MODIFICA TU MASCOTA"
+            android:textColor="#456677"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="302dp"
+            android:padding="70dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/logosplash" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre de la Mascota"
+            app:startIconDrawable="@drawable/ic_descripcion">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombreMascotaEditar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:fontFamily="sans-serif"
+                android:inputType="textPersonName"
+                android:shadowColor="#044343"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:hint="Tipo de Mascota ejemplo (perro,gato,etc)"
+            app:startIconDrawable="@drawable/ic_descripcion">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtTipoMascotaEditar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:fontFamily="sans-serif"
+                android:inputType="textPersonName"
+                android:shadowColor="#044343"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:hint="Caracteristicas de tu mascota"
+            app:startIconDrawable="@drawable/ic_descripcion">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDescripcionMascotaEditar"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:fontFamily="sans-serif"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:shadowColor="#044343"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/tvIdMascotaEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"/>
+        <Button
+            android:id="@+id/btnEditarMascotaForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/cardview_default_elevation"
+            android:backgroundTint="#456677"
+            android:shadowRadius="@integer/material_motion_duration_long_2"
+            android:onClick="clickBtnInsertarMascota"
+            android:text="Actualizar" />
+    </LinearLayout>
+</ScrollView>
+
