@@ -1,6 +1,7 @@
 package com.example.app_movil_petqr
 
 import android.app.DownloadManager
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,12 +20,25 @@ import org.json.JSONException
 class MostrarMascotas : AppCompatActivity() {
     var tableMascotas:TableLayout?=null
     var idUsuario:String?=null
+    var idGlobal:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_mascotas)
         tableMascotas=findViewById(R.id.tableMascotas)
         idUsuario=intent.getStringExtra("idUsuario").toString()
         tablaMascotas()
+
+        fun tableEditar(view: View){
+            //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
+            idGlobal=view.id.toString()
+            val btnActualizarMascota = findViewById<Button>(R.id.btnBorrarMascota)
+            btnActualizarMascota.setOnClickListener {
+                val crudMascota = Intent(this,MostrarMascotas::class.java)
+                crudMascota.putExtra("idUsuario",idGlobal)
+                startActivity(crudMascota)
+            }
+
+        }
     }
     fun tablaMascotas(){
         tableMascotas?.removeAllViews()
@@ -60,8 +74,7 @@ class MostrarMascotas : AppCompatActivity() {
     }
 
 
-    fun tableEditar(view: View){
-    }
+
     fun tableBorrar(view: View){
         var url ="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
         //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
