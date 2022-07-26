@@ -1,29 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <TableRow
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009">
 
-    <TableLayout
-        android:layout_width="408dp"
-        android:layout_height="98dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="1dp">
+        <TextView
+            android:id="@+id/colNombreMascota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/coltipoMascota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            tools:ignore="MissingConstraints" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/btnEditarMascota"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#456677"
+        android:onClick="tableEditar"
+        app:icon="@drawable/ic_editar"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnBorrarMascota"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:onClick="tableBorrar"
+        app:icon="@drawable/ic_eliminar"
+        tools:ignore="SpeakableTextPresentCheck" />
+    </TableRow>
