@@ -37,5 +37,12 @@ class PanelMascota : AppCompatActivity() {
             agregaMascota.putExtra("idUsuario",txtidUsuarioPaMascota?.text.toString())
             startActivity(agregaMascota)
         }
+
+        val btnCrudMascota = findViewById<Button>(R.id.btn_crud_Mascota)
+        btnCrudMascota.setOnClickListener {
+            val crudMascota = Intent(this,MostrarMascotas::class.java)
+            crudMascota.putExtra("idUsuario",txtidUsuarioPaMascota?.text.toString())
+            startActivity(crudMascota)
+        }
     }
 }
