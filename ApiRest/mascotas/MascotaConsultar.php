@@ -1,10 +1,11 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"]=="GET"){
+
     require_once "../conexion.php";
+
     $idUsuario = $_GET['idUsuario'];
-    $query = "SELECT mascota.nombre,tipoMascota,descripcion 
-                FROM mascota INNER JOIN usuario ON mascota.idUsuario=usuario.idUsuario 
-                WHERE usuario.idUsuario ='".$idUsuario."'";
+
+    $query = "SELECT * FROM mascota WHERE mascota.idUsuario ='".$idUsuario."'";
     $resultado = $mysql->query($query);
     if ($mysql->affected_rows > 0){
         //va jalando cada uno de los registro
