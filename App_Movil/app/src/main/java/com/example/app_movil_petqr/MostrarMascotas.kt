@@ -28,17 +28,9 @@ class MostrarMascotas : AppCompatActivity() {
         idUsuario=intent.getStringExtra("idUsuario").toString()
         tablaMascotas()
 
-        fun tableEditar(view: View){
             //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
-            idGlobal=view.id.toString()
-            val btnActualizarMascota = findViewById<Button>(R.id.btnBorrarMascota)
-            btnActualizarMascota.setOnClickListener {
-                val crudMascota = Intent(this,MostrarMascotas::class.java)
-                crudMascota.putExtra("idUsuario",idGlobal)
-                startActivity(crudMascota)
-            }
 
-        }
+
     }
     fun tablaMascotas(){
         tableMascotas?.removeAllViews()
@@ -73,7 +65,14 @@ class MostrarMascotas : AppCompatActivity() {
 
     }
 
+    fun tableEditar(view: View){
+        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
+        idGlobal=view.id.toString()
+        val intent = Intent(applicationContext, EditarMascota::class.java)
+        intent.putExtra("idMascota",idGlobal)
+        startActivity(intent)
 
+    }
 
     fun tableBorrar(view: View){
         var url ="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
