@@ -6,11 +6,14 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import java.util.concurrent.Executor
 
 class EditarMascota : AppCompatActivity() {
     var txtNombreMascotaEditar: EditText?=null
@@ -19,6 +22,11 @@ class EditarMascota : AppCompatActivity() {
     var tvIdMascotaEditar: TextView?=null
     var idMascota:String?=null
     var idUsuario:String?=null
+
+    private lateinit var executor: Executor
+    private lateinit var biometricPrompt: BiometricPrompt
+    private lateinit var promptInfo: BiometricPrompt.PromptInfo
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_mascota)
@@ -26,6 +34,29 @@ class EditarMascota : AppCompatActivity() {
         txtTipoMascotaEditar = findViewById(R.id.txtTipoMascotaEditar)
         txtDescripcionMascotaEditar= findViewById(R.id.txtDescripcionMascotaEditar)
         tvIdMascotaEditar=findViewById(R.id.tvIdMascotaEditar)
+
+        executor = ContextCompat.getMainExecutor(this)
+        biometricPrompt = BiometricPrompt(this, executor,
+            object : BiometricPrompt.AuthenticationCallback() {
+
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    Toast.makeText(applicationContext, "Authentication succeeded!", Toast.LENGTH_SHORT).show()
+                }
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    Toast.makeText(applicationContext, "Authentication error: $errString", Toast.LENGTH_SHORT).show()
+                }
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    Toast.makeText(applicationContext, "Authentication failed", Toast.LENGTH_SHORT).show()
+                }
+            })
+        promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Se modificara la información de tu mascota")
+            .setSubtitle("Ingrese sus datos biometricos")
+            .setNegativeButtonText("cancelar")
+            .build()
 
         idMascota=intent.getStringExtra("idMascota").toString()
         tvIdMascotaEditar?.setText(idMascota)
@@ -49,6 +80,7 @@ class EditarMascota : AppCompatActivity() {
     fun editarFinalMascota(view:View){
         val url="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaEditar.php"
         val queue=Volley.newRequestQueue(this)
+        biometricPrompt.authenticate(promptInfo)
         val resultadoPost = object : StringRequest(Request.Method.POST,url,
             Response.Listener { response ->
                 Toast.makeText(this,"Datos de la mascota actualizados",Toast.LENGTH_LONG).show()
