@@ -55,7 +55,7 @@ class Home : AppCompatActivity() {
         }
         val btnQr = findViewById<Button>(R.id.btn_panel_generaQr)
         btnQr.setOnClickListener {
-            val qr = Intent(this,GeneracionQR::class.java)
+            val qr = Intent(this,LectorQR::class.java)
             startActivity(qr)
         }
     }
