@@ -33,7 +33,7 @@ class AgregaUsuario : AppCompatActivity() {
         txtPassword = findViewById(R.id.txtPassword)
     }
     fun clickBtnInsertarUsuario(view : View){
-        val url= "http://192.168.8.101/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
+        val url= "http://192.168.8.103/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
         val queue=Volley.newRequestQueue(this)
         var resultadoPost = object : StringRequest(Request.Method.POST,url,
             Response.Listener<String> { response ->

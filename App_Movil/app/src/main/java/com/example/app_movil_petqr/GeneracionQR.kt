@@ -43,7 +43,7 @@ class GeneracionQR : AppCompatActivity() {
         //txtDescripcionQR?.setText(idMascota)
 
         val queue= Volley.newRequestQueue(this)
-        val url="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaConsultarQR.php?idMascota=$idMascota"
+        val url="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaConsultarQR.php?idMascota=$idMascota"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->

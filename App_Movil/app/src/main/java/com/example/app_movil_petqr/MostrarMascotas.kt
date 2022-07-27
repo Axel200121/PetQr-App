@@ -35,7 +35,7 @@ class MostrarMascotas : AppCompatActivity() {
     fun tablaMascotas(){
         tableMascotas?.removeAllViews()
         var queue=Volley.newRequestQueue(this)
-        var url ="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaConsultarPrueba.php?idUsuario=$idUsuario"
+        var url ="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaConsultarPrueba.php?idUsuario=$idUsuario"
         var jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
             Response.Listener { response ->
                 try {
@@ -85,7 +85,7 @@ class MostrarMascotas : AppCompatActivity() {
     }
 
     fun tableBorrar(view: View){
-        var url ="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
+        var url ="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
         //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
 
         val queue=Volley.newRequestQueue(this)

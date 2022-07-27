@@ -33,7 +33,7 @@ class EditarMascota : AppCompatActivity() {
         idUsuario=intent.getStringExtra("idUsuario").toString()
 
         val queue= Volley.newRequestQueue(this)
-        val url="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaConsultar.php?idMascota=$idMascota"
+        val url="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaConsultar.php?idMascota=$idMascota"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
@@ -47,7 +47,7 @@ class EditarMascota : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun editarFinalMascota(view:View){
-        val url="http://192.168.8.101/PetQr-App/ApiRest/mascotas/MascotaEditar.php"
+        val url="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaEditar.php"
         val queue=Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST,url,
             Response.Listener { response ->
