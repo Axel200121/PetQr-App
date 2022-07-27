@@ -142,7 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
-                        android:text="GENERACIÓN DEL QR"
+                        android:text="LECTOR DE QR"
                         android:textAlignment="center"
                         android:textSize="20dp"
                         android:textStyle="bold">
@@ -159,7 +159,7 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginEnd="30dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Ver más"
+                        android:text="Ejecutar"
                         app:cornerRadius="10dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
