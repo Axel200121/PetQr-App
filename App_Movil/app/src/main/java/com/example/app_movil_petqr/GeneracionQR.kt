@@ -24,8 +24,7 @@ class GeneracionQR : AppCompatActivity() {
     var tvNombreMascota:TextView?=null
     var tvTipoMascota:TextView?=null
     var tvDescripcion:TextView?=null
-    var apellidoPaterno:String?=null
-    var apellidoMaterno:String?=null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +47,10 @@ class GeneracionQR : AppCompatActivity() {
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
-                tvNombreUsuario?.setText(response.getString("nombre"))
+                tvNombreUsuario?.setText(response.getString("NombreCompleto"))
                 tvTelefono?.setText(response.getString("telefono"))
                 tvDireccion?.setText(response.getString("direccion"))
+                tvNombreMascota?.setText(response.getString("nombreMascota"))
                 tvTipoMascota?.setText(response.getString("tipoMascota"))
                 tvDescripcion?.setText(response.getString("descripcion"))
             }, Response.ErrorListener { error ->
@@ -70,8 +70,8 @@ class GeneracionQR : AppCompatActivity() {
                             "Tipo de Mascota:"+ tvTipoMascota?.text.toString()+"\n\n"+
                             "Descripción:"+tvDescripcion?.text.toString(),
                     BarcodeFormat.QR_CODE,
-                    750,
-                    750
+                    900,
+                    900
                 )
                 imgQR?.setImageBitmap(bitmap)
             }catch (e: Exception){
