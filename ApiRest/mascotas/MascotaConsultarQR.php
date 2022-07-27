@@ -5,7 +5,10 @@ if ($_SERVER["REQUEST_METHOD"]=="GET"){
 
     $idMascota = $_GET['idMascota'];
 
-    $query = "SELECT * FROM mascota INNER JOIN usuario ON mascota.idUsuario=usuario.idUsuario WHERE idMascota='".$idMascota."'";
+    $query = "SELECT mascota.nombre AS nombreMascota,tipoMascota,descripcion,
+    concat_ws('',usuario.nombre,' ',usuario.apellidoPaterno,'',usuario.apellidoMaterno) AS NombreCompleto ,
+    usuario.direccion,usuario.telefono
+     FROM mascota INNER JOIN usuario ON mascota.idUsuario=usuario.idUsuario WHERE idMascota='".$idMascota."'";
     $resultado = $mysql->query($query);
     if ($mysql->affected_rows > 0){
         //va jalando cada uno de los registro
