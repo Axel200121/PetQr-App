@@ -10,26 +10,51 @@ import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
+import java.util.concurrent.Executor
 
 class MostrarMascotas : AppCompatActivity() {
     var tableMascotas:TableLayout?=null
     var idUsuario:String?=null
     var idGlobal:String?=null
+    private lateinit var executor: Executor
+    private lateinit var biometricPrompt: BiometricPrompt
+    private lateinit var promptInfo: BiometricPrompt.PromptInfo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_mascotas)
         tableMascotas=findViewById(R.id.tableMascotas)
         idUsuario=intent.getStringExtra("idUsuario").toString()
+        executor = ContextCompat.getMainExecutor(this)
+        biometricPrompt = BiometricPrompt(this, executor,
+            object : BiometricPrompt.AuthenticationCallback() {
+
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    Toast.makeText(applicationContext, "Authentication succeeded!", Toast.LENGTH_SHORT).show()
+                }
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    Toast.makeText(applicationContext, "Authentication error: $errString", Toast.LENGTH_SHORT).show()
+                }
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    Toast.makeText(applicationContext, "Authentication failed", Toast.LENGTH_SHORT).show()
+                }
+            })
+        promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Se eliminara tu mascota")
+            .setSubtitle("Ingrese sus datos biometricos")
+            .setNegativeButtonText("cancelar")
+            .build()
         tablaMascotas()
-
-            //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
-
 
     }
     fun tablaMascotas(){
@@ -87,8 +112,8 @@ class MostrarMascotas : AppCompatActivity() {
     fun tableBorrar(view: View){
         var url ="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
         //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
-
         val queue=Volley.newRequestQueue(this)
+        biometricPrompt.authenticate(promptInfo)
         var resultadoEliminar =object:StringRequest(Request.Method.POST,url,
         Response.Listener { response ->
             Toast.makeText(this,"Mascota Eliminada",Toast.LENGTH_LONG).show()
