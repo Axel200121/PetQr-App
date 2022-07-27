@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:text="TextView" />
 
-        <TextView
+    <TextView
             android:id="@+id/coltipoMascota"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -27,6 +27,15 @@
             android:text="TextView"
             tools:ignore="MissingConstraints" />
 
+
+    <Button
+        android:id="@+id/btnScanner"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#456677"
+        android:onClick="tableScanner"
+        app:icon="@drawable/ic_qr"
+        tools:ignore="SpeakableTextPresentCheck" />
     <Button
         android:id="@+id/btnEditarMascota"
         android:layout_width="50dp"
