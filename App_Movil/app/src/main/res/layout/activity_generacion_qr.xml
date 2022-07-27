@@ -29,29 +29,140 @@
         android:padding="70dp"
         android:scaleType="centerCrop" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
-        android:hint="Caracteristicas de tu mascota"
-        app:startIconDrawable="@drawable/ic_descripcion">
+        android:text="TUS DATOS PERSONALES"
+        android:textAlignment="center"
+        android:textColor="#456677"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
-      <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtDescripcionQR"
-          android:layout_width="match_parent"
-          android:layout_height="150dp"
-          android:fontFamily="sans-serif"
-          android:inputType="textPersonName"
-          android:padding="10dp"
-          android:shadowColor="#044343"
-          tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <TextView
-        android:id="@+id/tvIdMascotaEditar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/lblNombreUsuario"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Nombre:" />
+
+      <TextView
+          android:id="@+id/tvNombreUsuario"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/lblTelefono"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Telefono:" />
+
+      <TextView
+          android:id="@+id/tvTelefono"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="TextView" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/lblDireccion"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Dirección:" />
+
+      <TextView
+          android:id="@+id/tvDireccion"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="TextView" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/lblTituloDatosMascota"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="DATOS DE TU MASCOTA"
+        android:textAlignment="center"
+        android:textColor="#456677"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/lblNombreMascota"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Nombre:" />
+
+      <TextView
+          android:id="@+id/tvNombreMascota"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="TextView" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/lblTipoMascota"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Tipo de Mascota::" />
+
+      <TextView
+          android:id="@+id/tvTipoMascota"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="TextView" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/lblDescripcion"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Desripción:" />
+
+      <TextView
+          android:id="@+id/tvDescripcion"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="TextView" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnGenerarQr"
