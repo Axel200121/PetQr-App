@@ -47,10 +47,13 @@ class MostrarMascotas : AppCompatActivity() {
                         val coltipoMascota=registro.findViewById<View>(R.id.coltipoMascota) as TextView
                         val btnEditarMascota=registro.findViewById<View>(R.id.btnEditarMascota)
                         val btnBorrarMascota=registro.findViewById<View>(R.id.btnBorrarMascota)
+                        val btnScanner=registro.findViewById<View>(R.id.btnScanner)
                         colNombreMascota.text=jsonObject.getString("nombre")
                         coltipoMascota.text=jsonObject.getString("tipoMascota")
                         btnEditarMascota.id=jsonObject.getInt("idMascota")
                         btnBorrarMascota.id=jsonObject.getInt("idMascota")
+                        btnScanner.id=jsonObject.getInt("idMascota")
+
                         tableMascotas?.addView(registro)
                     }
                 }catch (e: JSONException){
@@ -73,6 +76,12 @@ class MostrarMascotas : AppCompatActivity() {
         intent.putExtra("idUsuario",idUsuario)
         startActivity(intent)
 
+    }
+    fun tableScanner(view: View){
+        idGlobal=view.id.toString()
+        val intent=Intent(applicationContext,GeneracionQR::class.java)
+        intent.putExtra("idMascota",idGlobal)
+        startActivity(intent)
     }
 
     fun tableBorrar(view: View){
