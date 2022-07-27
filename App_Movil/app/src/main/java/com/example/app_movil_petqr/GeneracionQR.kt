@@ -63,7 +63,12 @@ class GeneracionQR : AppCompatActivity() {
             try {
                 var barcodeEncoder:BarcodeEncoder= BarcodeEncoder()
                 var bitmap:Bitmap=barcodeEncoder.encodeBitmap(
-                    txtDescripcionQR?.text.toString(),
+                    "Nombre del propietario:"+ tvNombreUsuario?.text.toString()+"\n\n" +
+                            "Telefono:"+tvTelefono?.text.toString()+"\n\n"+
+                            "Dirección:"+tvDireccion?.text.toString()+"\n\n"+
+                            "Nombre de la Mascota:"+tvNombreMascota?.text.toString()+"\n\n"+
+                            "Tipo de Mascota:"+ tvTipoMascota?.text.toString()+"\n\n"+
+                            "Descripción:"+tvDescripcion?.text.toString(),
                     BarcodeFormat.QR_CODE,
                     750,
                     750
