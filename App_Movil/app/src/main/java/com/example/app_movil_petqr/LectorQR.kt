@@ -19,7 +19,10 @@ class LectorQR : AppCompatActivity() {
     }
 
     fun iniciarScanner(){
-        IntentIntegrator(this).initiateScan()
+        val integrator = IntentIntegrator(this)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+        integrator.setPrompt("Scaneamos su información de la mascota")
+        integrator.initiateScan()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
