@@ -64,7 +64,7 @@ class EditarMascota : AppCompatActivity() {
         idUsuario=intent.getStringExtra("idUsuario").toString()
 
         val queue= Volley.newRequestQueue(this)
-        val url="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaConsultar.php?idMascota=$idMascota"
+        val url="http://192.168.0.11/PetQr-App/ApiRest/mascotas/MascotaConsultar.php?idMascota=$idMascota"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
@@ -78,7 +78,7 @@ class EditarMascota : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun editarFinalMascota(view:View){
-        val url="http://192.168.8.103/PetQr-App/ApiRest/mascotas/MascotaEditar.php"
+        val url="http://192.168.0.11/PetQr-App/ApiRest/mascotas/MascotaEditar.php"
         val queue=Volley.newRequestQueue(this)
         biometricPrompt.authenticate(promptInfo)
         val resultadoPost = object : StringRequest(Request.Method.POST,url,

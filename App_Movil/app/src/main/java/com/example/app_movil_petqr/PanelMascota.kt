@@ -20,7 +20,7 @@ class PanelMascota : AppCompatActivity() {
 
         val idUsuario=intent.getStringExtra("idUsuario").toString()
         val queue= Volley.newRequestQueue(this)
-        val url="http://192.168.8.103/PetQr-App/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
+        val url="http://192.168.0.11/PetQr-App/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
