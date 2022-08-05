@@ -8,7 +8,15 @@
         <entry key="..\:/xampp/htdocs/API_REST_PETQR/App_Movil/app/src/main/res/layout/activity_home.xml" value="0.328804347826087" />
         <entry key="..\:/xampp/htdocs/API_REST_PETQR/App_Movil/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/xampp/htdocs/API_REST_PETQR/App_Movil/app/src/main/res/layout/activity_main.xml" value="0.328804347826087" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/backgroud_intro.xml" value="0.3215" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/background_button.xml" value="0.304" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/content_color.xml" value="0.3215" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/contet_radius.xml" value="0.304" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/ic_baseline_double_arrow_24.xml" value="0.304" />
         <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/ic_descripcion.xml" value="0.2455" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/ic_icono_arrow.xml" value="0.3285" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/line_dolf.xml" value="0.3215" />
+        <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/drawable/line_gold.xml" value="0.304" />
         <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/layout/activity_agregar_mascota.xml" value="0.34479166666666666" />
         <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/layout/activity_agregar_usuario.xml" value="0.34479166666666666" />
         <entry key="..\:/xampp/htdocs/PetQr-App/App_Movil/app/src/main/res/layout/activity_datos_personales_usuario.xml" value="0.34479166666666666" />
