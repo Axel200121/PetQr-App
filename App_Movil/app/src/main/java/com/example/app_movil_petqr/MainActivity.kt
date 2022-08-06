@@ -15,5 +15,11 @@ class MainActivity : AppCompatActivity() {
             val lanzar = Intent(this,Login::class.java)
             startActivity(lanzar)
         }
+
+        val btnRegistrarFormulario = findViewById<Button>(R.id.btnRegistrarFormulario)
+        btnRegistrarFormulario.setOnClickListener {
+            val lanzar1 = Intent(this,AgregaUsuario::class.java)
+            startActivity(lanzar1)
+        }
     }
 }
