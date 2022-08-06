@@ -136,7 +136,6 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"
             android:hint="Ingrese su correo electronico"
-            app:startIconDrawable="@drawable/ic_correo_electronico"
             >
 
             <com.google.android.material.textfield.TextInputEditText

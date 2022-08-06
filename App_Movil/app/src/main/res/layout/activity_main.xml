@@ -98,7 +98,6 @@
                 android:backgroundTint="#ffc600"
                 android:text="Registrate"
                 app:cornerRadius="15dp"
-
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="16dp"

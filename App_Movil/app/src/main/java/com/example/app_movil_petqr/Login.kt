@@ -32,10 +32,6 @@ class Login : AppCompatActivity() {
         btnIngresarLogin = findViewById(R.id.btnIngresarLogin)
         btnRegistrarFormulario = findViewById(R.id.btnRegistrarFormulario)
 
-        btnRegistrarFormulario!!.setOnClickListener {
-            val lanzar = Intent(this,AgregaUsuario::class.java)
-            startActivity(lanzar)
-        }
 
         btnIngresarLogin!!.setOnClickListener {
             validarUsuario("http://192.168.0.11/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")

@@ -1,111 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/backgroud_intro"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="279dp"
-        android:layout_height="319dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276"
-        app:srcCompat="@drawable/logomorado"></ImageView>
-
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="380dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="10dp"
+        android:background="@drawable/content_color"
+        android:layout_marginEnd="10dp">
 
-
-        <ScrollView
+        <TextView
+            android:text="INICIE SESIÓN"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/line_gold" />
 
-            <LinearLayout
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:srcCompat="@drawable/iconlogin"
+                android:padding="10dp"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/line_gold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Ingrese su correo electronico"
+                android:textColorHint="@color/white"
+                app:startIconDrawable="@drawable/ic_correo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtCorreoLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_texview"
+                    android:fontFamily="sans-serif"
+                    android:inputType="textWebEmailAddress"
+                    android:padding="10dp"
+                    android:shadowColor="#044343"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="20dp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Ingrese su contraseña"
+                android:textColorHint="@color/white"
+                app:startIconDrawable="@drawable/ic_user_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPasswordLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_texview"
+                    android:fontFamily="sans-serif"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:shadowColor="#044343"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="20dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIngresarLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:orientation="vertical">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="20dp"
-                    android:hint="Ingrese su correo electronico"
-                    app:startIconDrawable="@drawable/ic_correo_electronico"
-                    >
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCorreoLogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:fontFamily="sans-serif"
-                        android:inputType="textWebEmailAddress"
-                        android:shadowColor="#044343"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:hint="Ingrese su contraseña"
-                    app:startIconDrawable="@drawable/ic_user_password">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtPasswordLogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:fontFamily="sans-serif"
-                        android:inputType="textPassword"
-                        android:shadowColor="#044343"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:id="@+id/btnIngresarLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/cardview_default_elevation"
-                    android:backgroundTint="#456677"
-                    android:onClick="validarUsuario"
-                    android:shadowRadius="@integer/material_motion_duration_long_2"
-                    android:text="Iniciar Sesión" />
-                <Button
-                    android:id="@+id/btnRegistrarFormulario"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="#456677"
-                    android:shadowRadius="@integer/material_motion_duration_long_2"
-                    android:layout_margin="@dimen/cardview_default_elevation"
-                    android:text="Registrate" />
-            </LinearLayout>
-
-        </ScrollView>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="#FF6E6E"
+                android:text="Iniciar Sesión"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:cornerRadius="15dp"
+                app:icon="@drawable/ic_baseline_double_arrow_24"
+                tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
+</ScrollView>
