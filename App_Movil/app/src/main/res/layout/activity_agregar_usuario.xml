@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:background="@drawable/content_color"
         android:orientation="vertical">
 
         <TextView
@@ -53,8 +52,7 @@
             android:layout_marginBottom="10dp"
             android:hint="Ingrese su nombre"
             app:startIconDrawable="@drawable/ic_user_login"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_texview">
+            android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNombre"
@@ -63,7 +61,7 @@
                 android:padding="10dp"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 android:shadowColor="#044343"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
@@ -76,8 +74,7 @@
             android:layout_marginBottom="20dp"
             android:hint="Ingrese el apellido Paterno"
             app:startIconDrawable="@drawable/ic_apellidos"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_texview">
+            android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtApellidoPaterno"
@@ -86,7 +83,7 @@
                 android:padding="10dp"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 android:shadowColor="#044343"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
@@ -98,8 +95,7 @@
             android:layout_marginBottom="20dp"
             android:hint="Ingrese el apellido Materno"
             app:startIconDrawable="@drawable/ic_apellidos"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_texview">
+            android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtApellidoMaterno"
@@ -109,7 +105,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
                 android:shadowColor="#044343"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -121,7 +117,6 @@
             android:layout_marginBottom="20dp"
             android:hint="Ingrese numero telefonico"
             app:startIconDrawable="@drawable/ic_telefono"
-            android:background="@drawable/background_texview"
             android:textColorHint="@color/white"
             >
 
@@ -133,7 +128,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="number"
                 android:shadowColor="#044343"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -145,7 +140,6 @@
             android:layout_marginBottom="20dp"
             android:hint="Ingrese su dirección"
             app:startIconDrawable="@drawable/ic_direccion"
-            android:background="@drawable/background_texview"
             android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -156,7 +150,7 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName"
                 android:shadowColor="#044343"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -167,7 +161,6 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"
             android:hint="Ingrese su correo electronico"
-            android:background="@drawable/background_texview"
             android:textColorHint="@color/white"
             app:startIconDrawable="@drawable/icprueba"
             >
@@ -181,7 +174,7 @@
                 android:inputType="textWebEmailAddress"
                 android:shadowColor="#044343"
                 android:textSize="16sp"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -203,7 +196,7 @@
                 android:inputType="textPassword"
                 android:shadowColor="#044343"
                 android:textSize="16sp"
-                android:background="@drawable/background_texview"
+                android:background="@drawable/content_color"
                 tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 

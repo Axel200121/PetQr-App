@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginStart="10dp"
-        android:background="@drawable/background_texview"
         android:layout_marginEnd="10dp">
 
         <TextView
