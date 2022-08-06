@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroud_intro"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -15,23 +16,35 @@
 
 
         <TextView
+            android:text="INFORMACIÓN DEL QR"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="INFORMACIÓN DEL QR"
-            android:textAlignment="center"
-            android:textColor="#456677"
-            android:textSize="27dp"
-            android:layout_marginBottom="10dp"
-            android:textStyle="bold" />
+            android:layout_height="3dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/line_gold" />
 
         <ImageView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:padding="80dp"
+            android:layout_height="302dp"
+            android:padding="40dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/infoqr" />
+            app:srcCompat="@drawable/icon_escanearqr">
+
+        </ImageView>
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/line_gold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,24 +57,29 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="textStart"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16dp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLectroQR"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="#456677"
-            android:shadowRadius="@integer/material_motion_duration_long_2"
-            android:text="Scanner QR"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="#FF6E6E"
+            android:text="Scanear QR"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/ic_baseline_double_arrow_24"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 </ScrollView>
 
