@@ -15,6 +15,8 @@
         <TextView
             android:id="@+id/colNombreMascota"
             android:layout_width="0dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
@@ -24,6 +26,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
             android:text="TextView"
             tools:ignore="MissingConstraints" />
 
@@ -32,7 +36,7 @@
         android:id="@+id/btnScanner"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#456677"
+        android:backgroundTint="#ffc600"
         android:onClick="tableScanner"
         app:icon="@drawable/ic_qr"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -40,7 +44,7 @@
         android:id="@+id/btnEditarMascota"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#456677"
+        android:backgroundTint="#16181c"
         android:onClick="tableEditar"
         app:icon="@drawable/ic_editar"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -50,7 +54,7 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
-        android:backgroundTint="@color/design_default_color_error"
+        android:backgroundTint="#FF6E6E"
         android:onClick="tableBorrar"
         app:icon="@drawable/ic_eliminar"
         tools:ignore="SpeakableTextPresentCheck" />
