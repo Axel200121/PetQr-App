@@ -34,7 +34,7 @@ class Login : AppCompatActivity() {
 
 
         btnIngresarLogin!!.setOnClickListener {
-            validarUsuario("http://192.168.0.11/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
+            validarUsuario("http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
         }
     }
     private fun validarUsuario(URL: String) {

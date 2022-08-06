@@ -95,17 +95,18 @@
                             app:srcCompat="@drawable/iconlogin" />
                         <TextView
                             android:id="@+id/textView6"
-                            android:layout_width="234dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:paddingEnd="25dp"
                             android:text="Podra ver toda su información personal que se usara para generar el QR"
                             android:textAlignment="gravity"
                             android:textColor="@color/white" />
                     </LinearLayout>
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_panel_datosPersonales"
-                        android:layout_width="230dp"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:layout_marginStart="100dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:backgroundTint="#FF6E6E"
                         android:text="Ver Más"
@@ -138,8 +139,7 @@
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="ADMINISTRA TUS MASCOTAS"
-                        android:textAlignment="textEnd"
-                        android:paddingEnd="30dp"
+                        android:textAlignment="center"
                         android:textSize="20dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"/>
@@ -156,16 +156,16 @@
                             android:id="@+id/textView7"
                             android:layout_width="234dp"
                             android:layout_height="wrap_content"
-                            android:paddingEnd="16dp"
+                            android:paddingEnd="25dp"
                             android:text="Podra ver administrar sus mascotas, asi mimo podra generar el QR"
                             android:textAlignment="gravity"
                             android:textColor="@color/white" />
                     </LinearLayout>
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_panel_mascotas"
-                        android:layout_width="230dp"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:layout_marginStart="80dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:backgroundTint="#FF6E6E"
                         android:text="Ver Más"
@@ -216,16 +216,16 @@
                             android:id="@+id/textView8"
                             android:layout_width="234dp"
                             android:layout_height="wrap_content"
-                            android:paddingEnd="12dp"
+                            android:paddingEnd="25dp"
                             android:text="Lector de QR podra leer cualquier QR no solo los que genera la APP"
                             android:textAlignment="gravity"
                             android:textColor="@color/white" />
                     </LinearLayout>
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_panel_generaQr"
-                        android:layout_width="230dp"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:layout_marginStart="80dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:backgroundTint="#FF6E6E"
                         android:text="Ver Más"

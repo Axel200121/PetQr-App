@@ -67,6 +67,7 @@
                     android:padding="10dp"
                     android:shadowColor="#044343"
                     android:textSize="16sp"
+                    android:textColor="@color/white"
                     android:layout_marginBottom="20dp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -90,6 +91,7 @@
                     android:inputType="textPassword"
                     android:padding="10dp"
                     android:shadowColor="#044343"
+                    android:textColor="@color/white"
                     android:textSize="16dp"
                     android:layout_marginBottom="20dp"
                     tools:ignore="TouchTargetSizeCheck" />
