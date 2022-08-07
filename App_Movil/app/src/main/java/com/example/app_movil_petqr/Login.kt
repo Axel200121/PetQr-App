@@ -40,36 +40,43 @@ class Login : AppCompatActivity() {
 
     }
     fun validarUsuario(view: View) {
-        val URL ="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioLogin.php"
-        val stringRequest: StringRequest = object : StringRequest(
-            Method.POST,
-            URL,
-            Response.Listener { response ->
+        if (txtCorreoLogin!!.text.isNotEmpty() && txtPasswordLogin!!.text.isNotEmpty()){
+            val URL ="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioLogin.php"
+            val stringRequest: StringRequest = object : StringRequest(
+                Method.POST,
+                URL,
+                Response.Listener { response ->
 
-                if(!response.isEmpty()){
-                    //alertLogin()
-                    Handler().postDelayed({
-                        val intent = Intent(applicationContext, Home::class.java)
-                        intent.putExtra("psw", txtPasswordLogin?.text.toString())
-                        startActivity(intent)
-                    },duracion)
-                } else {
-                    Toast.makeText(this@Login, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
+                    if(!response.isEmpty()){
+                        //alertLogin()
+                        Handler().postDelayed({
+                            val intent = Intent(applicationContext, Home::class.java)
+                            intent.putExtra("psw", txtPasswordLogin?.text.toString())
+                            startActivity(intent)
+                        },duracion)
+                    } else {
+                        Toast.makeText(this@Login, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                Response.ErrorListener { error ->
+                    Toast.makeText(this@Login, error.toString(), Toast.LENGTH_SHORT).show()
+                }) {
+                @Throws(AuthFailureError::class)
+                override fun getParams(): Map<String, String> {
+                    val parametros: MutableMap<String, String> = HashMap()
+                    parametros.put("correo",txtCorreoLogin?.text.toString())
+                    parametros.put("psw",txtPasswordLogin?.text.toString())
+                    return parametros
                 }
-            },
-            Response.ErrorListener { error ->
-                Toast.makeText(this@Login, error.toString(), Toast.LENGTH_SHORT).show()
-            }) {
-            @Throws(AuthFailureError::class)
-            override fun getParams(): Map<String, String> {
-                val parametros: MutableMap<String, String> = HashMap()
-                parametros.put("correo",txtCorreoLogin?.text.toString())
-                parametros.put("psw",txtPasswordLogin?.text.toString())
-                return parametros
             }
+            val requestQueue = Volley.newRequestQueue(this)
+            requestQueue.add(stringRequest)
+
+        }else{
+            Toast.makeText(this@Login, "Llene todos los campos por favor", Toast.LENGTH_SHORT).show()
+
         }
-        val requestQueue = Volley.newRequestQueue(this)
-        requestQueue.add(stringRequest)
+
     }
 
     fun alertLogin(){
