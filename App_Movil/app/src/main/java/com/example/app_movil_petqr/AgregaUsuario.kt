@@ -33,26 +33,36 @@ class AgregaUsuario : AppCompatActivity() {
         txtPassword = findViewById(R.id.txtPassword)
     }
     fun clickBtnInsertarUsuario(view : View){
-        val url= "http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
-        val queue=Volley.newRequestQueue(this)
-        var resultadoPost = object : StringRequest(Request.Method.POST,url,
-            Response.Listener<String> { response ->
-                Toast.makeText(this,"Usuario insertado exitosamente",Toast.LENGTH_LONG).show()
-            },Response.ErrorListener { error ->
-                Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
-            }){
-            override fun getParams(): MutableMap<String, String> {
-                val parametros=HashMap<String,String>()
-                parametros.put("nombre",txtNombre?.text.toString())
-                parametros.put("apellidoPaterno",txtApellidoPaterno?.text.toString())
-                parametros.put("apellidoMaterno",txtApellidoMaterno?.text.toString())
-                parametros.put("telefono",txtTelefono?.text.toString())
-                parametros.put("direccion",txtDireccion?.text.toString())
-                parametros.put("correo",txtCorreo?.text.toString())
-                parametros.put("psw",txtPassword?.text.toString())
-                return parametros
+        if (txtNombre!!.text.isNotEmpty() && txtApellidoPaterno!!.text.isNotEmpty() && txtApellidoMaterno!!.text.isNotEmpty() &&
+                txtTelefono!!.text.isNotEmpty() && txtDireccion!!.text.isNotEmpty() && txtCorreo!!.text.isNotEmpty() &&
+                txtPassword!!.text.isNotEmpty()){
+
+            val url= "http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
+            val queue=Volley.newRequestQueue(this)
+            var resultadoPost = object : StringRequest(Request.Method.POST,url,
+                Response.Listener<String> { response ->
+                    Toast.makeText(this,"Usuario insertado exitosamente",Toast.LENGTH_LONG).show()
+                },Response.ErrorListener { error ->
+                    Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
+                }){
+                override fun getParams(): MutableMap<String, String> {
+                    val parametros=HashMap<String,String>()
+                    parametros.put("nombre",txtNombre?.text.toString())
+                    parametros.put("apellidoPaterno",txtApellidoPaterno?.text.toString())
+                    parametros.put("apellidoMaterno",txtApellidoMaterno?.text.toString())
+                    parametros.put("telefono",txtTelefono?.text.toString())
+                    parametros.put("direccion",txtDireccion?.text.toString())
+                    parametros.put("correo",txtCorreo?.text.toString())
+                    parametros.put("psw",txtPassword?.text.toString())
+                    return parametros
+                }
             }
+            queue.add(resultadoPost)
+
+        }else{
+            Toast.makeText(this,"Llene todos los campos por favor",Toast.LENGTH_LONG).show()
+
         }
-        queue.add(resultadoPost)
+
     }
 }
