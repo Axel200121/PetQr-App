@@ -33,23 +33,29 @@ class AgregarMascota : AppCompatActivity(){
 
     }
     fun clickBtnInsertarMascota(view: View){
-        val url= "http://192.168.0.14/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
-        val queue=Volley.newRequestQueue(this)
-        var resultadoPostMascota = object : StringRequest(Method.POST,url,
-            Response.Listener { response ->
-                Toast.makeText(this,"Mascota registrada exitosamente",Toast.LENGTH_LONG).show()
-            },Response.ErrorListener { error ->
-                Toast.makeText(this,"Error al registra tu mascota",Toast.LENGTH_LONG).show()
-            }){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros=HashMap<String,String>()
-                parametros.put("nombre",txtNombreMascota?.text.toString())
-                parametros.put("tipoMascota",txtTipoMascota?.text.toString())
-                parametros.put("descripcion",txtDescripcionMascota?.text.toString())
-                parametros.put("idUsuario",tvIdUsuarioMascota?.text.toString())
-                return parametros
+        if(txtNombreMascota!!.text.isNotEmpty() && txtTipoMascota!!.text.isNotEmpty() && txtDescripcionMascota!!.text.isNotEmpty()){
+            val url= "http://192.168.0.14/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
+            val queue=Volley.newRequestQueue(this)
+            var resultadoPostMascota = object : StringRequest(Method.POST,url,
+                Response.Listener { response ->
+                    Toast.makeText(this,"Mascota registrada exitosamente",Toast.LENGTH_LONG).show()
+                },Response.ErrorListener { error ->
+                    Toast.makeText(this,"Error al registra tu mascota",Toast.LENGTH_LONG).show()
+                }){
+                override fun getParams(): MutableMap<String, String>? {
+                    val parametros=HashMap<String,String>()
+                    parametros.put("nombre",txtNombreMascota?.text.toString())
+                    parametros.put("tipoMascota",txtTipoMascota?.text.toString())
+                    parametros.put("descripcion",txtDescripcionMascota?.text.toString())
+                    parametros.put("idUsuario",tvIdUsuarioMascota?.text.toString())
+                    return parametros
+                }
             }
+            queue.add(resultadoPostMascota)
+        }else{
+            Toast.makeText(this,"Llene todos loc campos por favor",Toast.LENGTH_LONG).show()
+
         }
-        queue.add(resultadoPostMascota)
+
     }
 }
