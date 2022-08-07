@@ -3,10 +3,14 @@ package com.example.app_movil_petqr
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.os.postDelayed
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
@@ -22,6 +26,8 @@ class Login : AppCompatActivity() {
     var txtPasswordLogin: EditText?=null;
     var btnIngresarLogin: Button?=null;
     var btnRegistrarFormulario: Button?=null;
+    var duracion:Long=3000;
+    var btnAlertConfirmarLogin: Button?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,20 +38,21 @@ class Login : AppCompatActivity() {
         btnIngresarLogin = findViewById(R.id.btnIngresarLogin)
         btnRegistrarFormulario = findViewById(R.id.btnRegistrarFormulario)
 
-
-        btnIngresarLogin!!.setOnClickListener {
-            validarUsuario("http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioLogin.php")
-        }
     }
-    private fun validarUsuario(URL: String) {
+    fun validarUsuario(view: View) {
+        val URL ="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioLogin.php"
         val stringRequest: StringRequest = object : StringRequest(
             Method.POST,
             URL,
             Response.Listener { response ->
+
                 if(!response.isEmpty()){
-                    val intent = Intent(applicationContext, Home::class.java)
-                    intent.putExtra("psw", txtPasswordLogin?.text.toString())
-                    startActivity(intent)
+                    //alertLogin()
+                    Handler().postDelayed({
+                        val intent = Intent(applicationContext, Home::class.java)
+                        intent.putExtra("psw", txtPasswordLogin?.text.toString())
+                        startActivity(intent)
+                    },duracion)
                 } else {
                     Toast.makeText(this@Login, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
                 }
@@ -64,6 +71,18 @@ class Login : AppCompatActivity() {
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(stringRequest)
     }
+
+    fun alertLogin(){
+        val viewAlertErrror = View.inflate(this,R.layout.alert_login_error,null)
+        val builder = AlertDialog.Builder(this)
+        builder.setView(viewAlertErrror)
+        val dialog = builder.create()
+        dialog.show()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+    }
+
+
 
     /*fun clickVer(view: View){
         var intent = Intent(this,Home::class.java)

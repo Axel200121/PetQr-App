@@ -3,9 +3,11 @@ package com.example.app_movil_petqr
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.postDelayed
 import com.google.zxing.integration.android.IntentIntegrator
 
 class LectorQR : AppCompatActivity() {
@@ -32,7 +34,7 @@ class LectorQR : AppCompatActivity() {
         val result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
         if (result != null){
             if (result.contents==null){
-                Toast.makeText(this,"Cancelado",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Cancelado",Toast.LENGTH_LONG).show()
             }else{
                 tvValorQR?.setText(result.contents)
             }
@@ -40,4 +42,5 @@ class LectorQR : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
+
 }

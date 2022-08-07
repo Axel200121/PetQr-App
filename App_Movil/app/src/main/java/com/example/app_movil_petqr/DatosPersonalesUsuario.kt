@@ -3,6 +3,7 @@ package com.example.app_movil_petqr
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -26,6 +27,7 @@ class DatosPersonalesUsuario : AppCompatActivity() {
     var txtPasswordEditar: EditText?=null;
     var tvIdUsuario:TextView?=null
     var idUsuario:String?=null
+    var btnEditar:Button?=null
 
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: BiometricPrompt
@@ -42,9 +44,11 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         txtCorreoEditar = findViewById(R.id.txtCorreoEditar)
         txtPasswordEditar = findViewById(R.id.txtPasswordEditar)
         tvIdUsuario=findViewById(R.id.tvIdUsuario)
+        btnEditar = findViewById(R.id.btnEditar)
         executor = ContextCompat.getMainExecutor(this)
         biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
+
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
@@ -64,6 +68,7 @@ class DatosPersonalesUsuario : AppCompatActivity() {
             .setSubtitle("Ingrese sus datos biometricos")
             .setNegativeButtonText("cancelar")
             .build()
+
 
 
         idUsuario=intent.getStringExtra("idUsuario").toString()
@@ -87,32 +92,45 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun editarUsuario(view: View){
-        val url="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioEditar.php"
-        val queue=Volley.newRequestQueue(this)
-        biometricPrompt.authenticate(promptInfo)
-        val resultadoPost = object : StringRequest(Request.Method.POST,url,
-        Response.Listener { response ->
-            Toast.makeText(this,"Datos personales actualizados",Toast.LENGTH_LONG).show()
 
-        },Response.ErrorListener { error ->
-                Toast.makeText(this,"Error al modificar datos personales $error",Toast.LENGTH_LONG).show()
+        if (txtNombreEditar!!.text.isNotEmpty()  && txtApellidoPaternoEditar!!.text.isNotEmpty() && txtApellidoMaternoEditar!!.text.isNotEmpty()&&
+            txtTelefonoEditar!!.text.isNotEmpty() && txtDireccionEditar!!.text.isNotEmpty() && txtCorreoEditar!!.text.isNotEmpty() &&
+            txtPasswordEditar!!.text.isNotEmpty()){
+            val url="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioEditar.php"
+            val queue=Volley.newRequestQueue(this)
+            biometricPrompt.authenticate(promptInfo)
+
+            val resultadoPost = object : StringRequest(Request.Method.POST,url,
+                Response.Listener { response ->
+                    Toast.makeText(this,"Datos personales actualizados",Toast.LENGTH_LONG).show()
+
+                },Response.ErrorListener { error ->
+                    Toast.makeText(this,"Error al modificar datos personales $error",Toast.LENGTH_LONG).show()
+                }
+            ){
+                override fun getParams(): MutableMap<String, String>? {
+                    val parametros = HashMap<String,String>()
+                    parametros.put("idUsuario",idUsuario!!)
+                    parametros.put("nombre",txtNombreEditar?.text.toString())
+                    parametros.put("apellidoPaterno",txtApellidoPaternoEditar?.text.toString())
+                    parametros.put("apellidoMaterno",txtApellidoMaternoEditar?.text.toString())
+                    parametros.put("telefono",txtTelefonoEditar?.text.toString())
+                    parametros.put("direccion",txtDireccionEditar?.text.toString())
+                    parametros.put("correo",txtCorreoEditar?.text.toString())
+                    parametros.put("psw",txtPasswordEditar?.text.toString())
+                    return parametros
+                }
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String,String>()
-                parametros.put("idUsuario",idUsuario!!)
-                parametros.put("nombre",txtNombreEditar?.text.toString())
-                parametros.put("apellidoPaterno",txtApellidoPaternoEditar?.text.toString())
-                parametros.put("apellidoMaterno",txtApellidoMaternoEditar?.text.toString())
-                parametros.put("telefono",txtTelefonoEditar?.text.toString())
-                parametros.put("direccion",txtDireccionEditar?.text.toString())
-                parametros.put("correo",txtCorreoEditar?.text.toString())
-                parametros.put("psw",txtPasswordEditar?.text.toString())
-                return parametros
-            }
+            queue.add(resultadoPost)
+
+        }else{
+            Toast.makeText(this,"Llene todos los campos",Toast.LENGTH_LONG).show()
+
         }
-        queue.add(resultadoPost)
+
     }
+
+
 
     fun activarCajas(view: View){
         txtNombreEditar?.isEnabled=true
