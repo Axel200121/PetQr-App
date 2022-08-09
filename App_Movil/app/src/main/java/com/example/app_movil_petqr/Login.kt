@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
                 Response.Listener { response ->
                     if(!response.isEmpty()){
                         val intent = Intent(applicationContext, Home::class.java)
-                        intent.putExtra("psw", txtPasswordLogin?.text.toString())
+                        intent.putExtra("correo", txtCorreoLogin?.text.toString())
                         startActivity(intent)
                     } else {
                         Toast.makeText(this@Login, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()

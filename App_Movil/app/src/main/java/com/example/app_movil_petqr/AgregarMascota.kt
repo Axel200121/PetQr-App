@@ -1,5 +1,6 @@
 package com.example.app_movil_petqr
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -40,6 +41,11 @@ class AgregarMascota : AppCompatActivity(){
             var resultadoPostMascota = object : StringRequest(Method.POST,url,
                 Response.Listener { response ->
                     Toast.makeText(this,"Mascota registrada exitosamente",Toast.LENGTH_LONG).show()
+                    limpiarCajas()
+                    val btnRegresar = Intent(this,MostrarMascotas::class.java)
+                    btnRegresar.putExtra("idUsuario",idUsuario)
+                    startActivity(btnRegresar)
+
                 },Response.ErrorListener { error ->
                     Toast.makeText(this,"Error al registra tu mascota",Toast.LENGTH_LONG).show()
                 }){
@@ -56,5 +62,11 @@ class AgregarMascota : AppCompatActivity(){
         }else{
             Toast.makeText(this,"Llene todos loc campos por favor",Toast.LENGTH_LONG).show()
         }
+    }
+    fun limpiarCajas(){
+        txtNombreMascota?.setText(" ")
+        txtTipoMascota?.setText(" ")
+        txtDescripcionMascota?.setText(" ")
+
     }
 }

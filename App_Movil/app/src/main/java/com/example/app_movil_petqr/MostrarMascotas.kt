@@ -112,7 +112,6 @@ class MostrarMascotas : AppCompatActivity() {
     fun tableBorrar(view: View){
         var url ="https://selenographic-masse.000webhostapp.com/ApiRest/mascotas/MascotaBorrar.php"
         val queue=Volley.newRequestQueue(this)
-        biometricPrompt.authenticate(promptInfo)
         var resultadoEliminar =object:StringRequest(Request.Method.POST,url,
         Response.Listener { response ->
             Toast.makeText(this,"Mascota Eliminada",Toast.LENGTH_LONG).show()

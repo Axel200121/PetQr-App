@@ -21,9 +21,9 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         txtNombre1=findViewById(R.id.txtNombre1)
-        val psw=intent.getStringExtra("psw").toString()
+        val correo=intent.getStringExtra("correo").toString()
         val queue=Volley.newRequestQueue(this)
-        val url="https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioConsultar.php?psw=$psw"
+        val url="https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioConsultar.php?correo=$correo"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->

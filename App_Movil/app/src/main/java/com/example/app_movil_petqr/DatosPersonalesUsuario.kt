@@ -1,5 +1,6 @@
 package com.example.app_movil_petqr
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -122,6 +123,7 @@ class DatosPersonalesUsuario : AppCompatActivity() {
             Toast.makeText(this,"Llene todos los campos",Toast.LENGTH_LONG).show()
         }
     }
+
 
 
     fun activarCajas(view: View){

@@ -1,5 +1,6 @@
 package com.example.app_movil_petqr
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -42,6 +43,10 @@ class AgregaUsuario : AppCompatActivity() {
             var resultadoPost = object : StringRequest(Request.Method.POST,url,
                 Response.Listener<String> { response ->
                     Toast.makeText(this,"Usuario insertado exitosamente",Toast.LENGTH_LONG).show()
+                    limpiarCajasAgregarUsuario()
+                    val btnReturnLogin = Intent(this,Login::class.java)
+                    startActivity(btnReturnLogin)
+
                 },Response.ErrorListener { error ->
                     Toast.makeText(this,"Error $error ",Toast.LENGTH_LONG).show()
                 }){
@@ -62,5 +67,14 @@ class AgregaUsuario : AppCompatActivity() {
             Toast.makeText(this,"Llene todos los campos por favor",Toast.LENGTH_LONG).show()
         }
 
+    }
+    fun limpiarCajasAgregarUsuario(){
+        txtNombre?.setText(" ")
+        txtApellidoPaterno?.setText(" ")
+        txtApellidoMaterno?.setText(" ")
+        txtDireccion?.setText(" ")
+        txtTelefono?.setText(" ")
+        txtCorreo?.setText(" ")
+        txtPassword?.setText(" ")
     }
 }
