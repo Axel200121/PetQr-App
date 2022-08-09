@@ -37,7 +37,7 @@ class AgregaUsuario : AppCompatActivity() {
                 txtTelefono!!.text.isNotEmpty() && txtDireccion!!.text.isNotEmpty() && txtCorreo!!.text.isNotEmpty() &&
                 txtPassword!!.text.isNotEmpty()){
 
-            val url= "http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioInsertar.php"
+            val url= "https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioInsertar.php"
             val queue=Volley.newRequestQueue(this)
             var resultadoPost = object : StringRequest(Request.Method.POST,url,
                 Response.Listener<String> { response ->
@@ -58,10 +58,8 @@ class AgregaUsuario : AppCompatActivity() {
                 }
             }
             queue.add(resultadoPost)
-
         }else{
             Toast.makeText(this,"Llene todos los campos por favor",Toast.LENGTH_LONG).show()
-
         }
 
     }

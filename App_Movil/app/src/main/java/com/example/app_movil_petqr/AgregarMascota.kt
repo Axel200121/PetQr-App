@@ -33,8 +33,9 @@ class AgregarMascota : AppCompatActivity(){
 
     }
     fun clickBtnInsertarMascota(view: View){
-        if(txtNombreMascota!!.text.isNotEmpty() && txtTipoMascota!!.text.isNotEmpty() && txtDescripcionMascota!!.text.isNotEmpty()){
-            val url= "http://192.168.0.14/PetQr-App/ApiRest/mascotas/MascotaInsertar.php"
+        if(txtNombreMascota!!.text.isNotEmpty() && txtTipoMascota!!.text.isNotEmpty() &&
+            txtDescripcionMascota!!.text.isNotEmpty()){
+            val url= "https://selenographic-masse.000webhostapp.com/ApiRest/mascotas/MascotaInsertar.php"
             val queue=Volley.newRequestQueue(this)
             var resultadoPostMascota = object : StringRequest(Method.POST,url,
                 Response.Listener { response ->
@@ -54,8 +55,6 @@ class AgregarMascota : AppCompatActivity(){
             queue.add(resultadoPostMascota)
         }else{
             Toast.makeText(this,"Llene todos loc campos por favor",Toast.LENGTH_LONG).show()
-
         }
-
     }
 }

@@ -41,19 +41,15 @@ class Login : AppCompatActivity() {
     }
     fun validarUsuario(view: View) {
         if (txtCorreoLogin!!.text.isNotEmpty() && txtPasswordLogin!!.text.isNotEmpty()){
-            val URL ="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioLogin.php"
+            val URL ="https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioLogin.php"
             val stringRequest: StringRequest = object : StringRequest(
                 Method.POST,
                 URL,
                 Response.Listener { response ->
-
                     if(!response.isEmpty()){
-                        //alertLogin()
-                        Handler().postDelayed({
-                            val intent = Intent(applicationContext, Home::class.java)
-                            intent.putExtra("psw", txtPasswordLogin?.text.toString())
-                            startActivity(intent)
-                        },duracion)
+                        val intent = Intent(applicationContext, Home::class.java)
+                        intent.putExtra("psw", txtPasswordLogin?.text.toString())
+                        startActivity(intent)
                     } else {
                         Toast.makeText(this@Login, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
                     }
@@ -74,9 +70,7 @@ class Login : AppCompatActivity() {
 
         }else{
             Toast.makeText(this@Login, "Llene todos los campos por favor", Toast.LENGTH_SHORT).show()
-
         }
-
     }
 
     fun alertLogin(){

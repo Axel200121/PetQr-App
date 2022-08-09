@@ -21,19 +21,13 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         txtNombre1=findViewById(R.id.txtNombre1)
-        //txtApellidoPaterno=findViewById(R.id.txtApellidoPaterno1)
-        //txtApellidoMaterno=findViewById(R.id.txtApellidoMaterno1)
-
-
         val psw=intent.getStringExtra("psw").toString()
         val queue=Volley.newRequestQueue(this)
-        val url="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioConsultar.php?psw=$psw"
+        val url="https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioConsultar.php?psw=$psw"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
                 txtNombre1?.setText(response.getString("idUsuario"))
-                //txtApellidoPaterno?.setText(response.getString("apellidoPaterno"))
-                //txtApellidoMaterno?.setText(response.getString("apellidoMaterno"))
             },Response.ErrorListener { error ->
                 Toast.makeText(this,error.toString(),Toast.LENGTH_LONG).show()
             }

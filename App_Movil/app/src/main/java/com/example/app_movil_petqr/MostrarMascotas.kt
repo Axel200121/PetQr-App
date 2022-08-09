@@ -60,7 +60,7 @@ class MostrarMascotas : AppCompatActivity() {
     fun tablaMascotas(){
         tableMascotas?.removeAllViews()
         var queue=Volley.newRequestQueue(this)
-        var url ="http://192.168.0.14/PetQr-App/ApiRest/mascotas/MascotaConsultarPrueba.php?idUsuario=$idUsuario"
+        var url ="https://selenographic-masse.000webhostapp.com/ApiRest/mascotas/MascotaConsultarPrueba.php?idUsuario=$idUsuario"
         var jsonObjectRequest=JsonObjectRequest(Request.Method.GET,url,null,
             Response.Listener { response ->
                 try {
@@ -110,8 +110,7 @@ class MostrarMascotas : AppCompatActivity() {
     }
 
     fun tableBorrar(view: View){
-        var url ="http://192.168.0.14/PetQr-App/ApiRest/mascotas/MascotaBorrar.php"
-        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
+        var url ="https://selenographic-masse.000webhostapp.com/ApiRest/mascotas/MascotaBorrar.php"
         val queue=Volley.newRequestQueue(this)
         biometricPrompt.authenticate(promptInfo)
         var resultadoEliminar =object:StringRequest(Request.Method.POST,url,

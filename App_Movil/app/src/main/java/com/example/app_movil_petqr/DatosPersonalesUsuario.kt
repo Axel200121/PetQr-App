@@ -48,8 +48,6 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         executor = ContextCompat.getMainExecutor(this)
         biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
-
-
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
                     Toast.makeText(applicationContext, "Authentication succeeded!", Toast.LENGTH_SHORT).show()
@@ -69,12 +67,10 @@ class DatosPersonalesUsuario : AppCompatActivity() {
             .setNegativeButtonText("cancelar")
             .build()
 
-
-
         idUsuario=intent.getStringExtra("idUsuario").toString()
         tvIdUsuario?.setText(idUsuario)
         val queue=Volley.newRequestQueue(this)
-        val url="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
+        val url="https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioConsultarID.php?idUsuario=$idUsuario"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             Response.Listener { response ->
@@ -92,14 +88,14 @@ class DatosPersonalesUsuario : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun editarUsuario(view: View){
-
-        if (txtNombreEditar!!.text.isNotEmpty()  && txtApellidoPaternoEditar!!.text.isNotEmpty() && txtApellidoMaternoEditar!!.text.isNotEmpty()&&
-            txtTelefonoEditar!!.text.isNotEmpty() && txtDireccionEditar!!.text.isNotEmpty() && txtCorreoEditar!!.text.isNotEmpty() &&
+        if (txtNombreEditar!!.text.isNotEmpty()  && txtApellidoPaternoEditar!!.text.isNotEmpty()
+            && txtApellidoMaternoEditar!!.text.isNotEmpty()&&
+            txtTelefonoEditar!!.text.isNotEmpty() && txtDireccionEditar!!.text.isNotEmpty()
+            && txtCorreoEditar!!.text.isNotEmpty() &&
             txtPasswordEditar!!.text.isNotEmpty()){
-            val url="http://192.168.0.14/PetQr-App/ApiRest/usuarios/UsuarioEditar.php"
+            val url="https://selenographic-masse.000webhostapp.com/ApiRest/usuarios/UsuarioEditar.php"
             val queue=Volley.newRequestQueue(this)
             biometricPrompt.authenticate(promptInfo)
-
             val resultadoPost = object : StringRequest(Request.Method.POST,url,
                 Response.Listener { response ->
                     Toast.makeText(this,"Datos personales actualizados",Toast.LENGTH_LONG).show()
@@ -122,14 +118,10 @@ class DatosPersonalesUsuario : AppCompatActivity() {
                 }
             }
             queue.add(resultadoPost)
-
         }else{
             Toast.makeText(this,"Llene todos los campos",Toast.LENGTH_LONG).show()
-
         }
-
     }
-
 
 
     fun activarCajas(view: View){
