@@ -51,15 +51,15 @@ class DatosPersonalesUsuario : AppCompatActivity() {
             object : BiometricPrompt.AuthenticationCallback() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    Toast.makeText(applicationContext, "Authentication succeeded!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Huella dactilar correcta", Toast.LENGTH_SHORT).show()
                 }
                 override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                     super.onAuthenticationError(errorCode, errString)
-                    Toast.makeText(applicationContext, "Authentication error: $errString", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Error de atutentificación: $errString", Toast.LENGTH_SHORT).show()
                 }
                 override fun onAuthenticationFailed() {
                     super.onAuthenticationFailed()
-                    Toast.makeText(applicationContext, "Authentication failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Error de atutentificación", Toast.LENGTH_SHORT).show()
                 }
             })
         promptInfo = BiometricPrompt.PromptInfo.Builder()

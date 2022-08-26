@@ -30,7 +30,7 @@
         android:layout_marginTop="-10dp"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:padding="80dp"
+        android:padding="120dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/info_userqr" />
 
@@ -130,7 +130,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:padding="90dp"
+        android:padding="120dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/crud_mascotaaa"/>
     <LinearLayout
@@ -229,7 +229,7 @@
         android:id="@+id/imgQR"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:padding="50dp"
+        android:padding="70dp"
         android:scaleType="centerCrop" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGenerarQr"

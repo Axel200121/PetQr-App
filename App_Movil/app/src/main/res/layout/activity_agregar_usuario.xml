@@ -166,7 +166,7 @@
             android:layout_marginBottom="20dp"
             android:hint="Ingrese su correo electronico"
             android:textColorHint="@color/white"
-            app:startIconDrawable="@drawable/icprueba"
+            app:startIconDrawable="@drawable/ic_correo"
             >
 
             <com.google.android.material.textfield.TextInputEditText

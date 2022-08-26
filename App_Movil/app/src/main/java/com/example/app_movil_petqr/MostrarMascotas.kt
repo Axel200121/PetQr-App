@@ -58,6 +58,7 @@ class MostrarMascotas : AppCompatActivity() {
 
     }
     fun tablaMascotas(){
+        tablaMascotas()
         tableMascotas?.removeAllViews()
         var queue=Volley.newRequestQueue(this)
         var url ="https://selenographic-masse.000webhostapp.com/ApiRest/mascotas/MascotaConsultarPrueba.php?idUsuario=$idUsuario"
@@ -78,7 +79,6 @@ class MostrarMascotas : AppCompatActivity() {
                         btnEditarMascota.id=jsonObject.getInt("idMascota")
                         btnBorrarMascota.id=jsonObject.getInt("idMascota")
                         btnScanner.id=jsonObject.getInt("idMascota")
-
                         tableMascotas?.addView(registro)
                     }
                 }catch (e: JSONException){
@@ -86,7 +86,6 @@ class MostrarMascotas : AppCompatActivity() {
                 }
             },Response.ErrorListener { error ->
                 Toast.makeText(this,error.toString(),Toast.LENGTH_LONG).show()
-
             }
         )
         queue.add(jsonObjectRequest)
@@ -94,7 +93,6 @@ class MostrarMascotas : AppCompatActivity() {
     }
 
     fun tableEditar(view: View){
-        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
         idGlobal=view.id.toString()
         val intent = Intent(applicationContext, EditarMascota::class.java)
         intent.putExtra("idMascota",idGlobal)

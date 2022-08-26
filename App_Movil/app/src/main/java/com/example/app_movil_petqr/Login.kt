@@ -73,21 +73,4 @@ class Login : AppCompatActivity() {
         }
     }
 
-    fun alertLogin(){
-        val viewAlertErrror = View.inflate(this,R.layout.alert_login_error,null)
-        val builder = AlertDialog.Builder(this)
-        builder.setView(viewAlertErrror)
-        val dialog = builder.create()
-        dialog.show()
-        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-
-    }
-
-
-
-    /*fun clickVer(view: View){
-        var intent = Intent(this,Home::class.java)
-        intent.putExtra("psw", txtPasswordLogin?.text)
-        startActivity(intent)
-    }*/
 }
